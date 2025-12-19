@@ -1,0 +1,18 @@
+# Core numerical & data libraries
+numpy==2.3.4
+pandas==2.3.3
+scipy
+
+# plotting / visualization
+matplotlib==3.10.7
+
+# performance / JIT (vectorbt often requires numba)
+numba==0.62.1
+
+# strategy / backtest libraries
+vectorbt==0.28.1
+pykalman==0.10.2
+scikit-learn
+
+# interactive environment
+jupyterlab==4.4.10

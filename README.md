@@ -29,7 +29,7 @@ Additionally, the strategy is enhanced with a **regime shift detection filter** 
 
 ## **Project Structure**
 ```
-pair-trading-kalman-filter/
+pair-trading-strategy/
 │
 ├── data/                             # Sample data
 │   ├── fx_data.csv                   # historical prices for fx 
