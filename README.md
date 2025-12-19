@@ -1,4 +1,4 @@
-# ğŸ“ˆ Pair Trading Strategy with Kalman Filter & Regime Shift Detection
+# Pair Trading Strategy with Kalman Filter & Regime Shift Detection
 
 ## **Overview**
 This project implements and backtests a **pair trading strategy** using the Hong Kong indices **HSCEI** and **XIN9I**. The strategy uses a **Kalman filter** to estimate the dynamic hedge ratio and spread, and generates trading signals based on the **20-day rolling z-score** of the spread.  
@@ -26,11 +26,14 @@ Additionally, the strategy is enhanced with a **regime shift detection filter** 
 
 ---
 
+
 ## **Project Structure**
 ```
 pair-trading-kalman-filter/
 │
 ├── data/                             # Sample data
+│   ├── fx_data.csv                   # historical prices for fx 
+│   └── indices_data.csv              # historical prices for indices
 ├── pair_trading_signal.py            # Pair trading signal
 ├── mmd_regime_shift_detector.py      # Regime shift detection filter
 ├── pair_trading_backtest.ipynb       # Main Jupyter Notebook
@@ -55,7 +58,7 @@ pip install -r requirements.txt
 Open the Jupyter notebook:
 
 ```bash
-jupyter notebook notebook.ipynb
+jupyter lab pair_trading_backtest.ipynb
 ```
 
 Follow the steps in the notebook:
