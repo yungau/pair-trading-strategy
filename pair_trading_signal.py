@@ -11,14 +11,12 @@ import pandas as pd
 import matplotlib.pyplot as plt
 from pykalman import KalmanFilter
 
-
 pd.set_option('display.max_rows', 100)
 pd.set_option('display.max_columns', 100)
 pd.set_option('display.width', 1000)
 pd.set_option('display.max_colwidth', 100)
 pd.set_option('display.float_format', '{:_.4f}'.format)
 plt.rcParams['figure.figsize'] = (16, 8)
-
 
 
 class SignalGeneration:
@@ -77,17 +75,6 @@ class SignalGeneration:
         )
 
         state_means, state_covs = kf.filter(px_ts1)
-
-        # state_means, state_covs = run_Kalman_filter(
-        #     transition_matrices = params.get('transition_matrices', trans_mat_T),
-        #     observation_matrices = params.get('observation_matrices', obs_mat_F),
-        #     observation_ts = px_ts1,
-        #     initial_state_mean = params.get('initial_state_mean', np.zeros(2)),
-        #     initial_state_covariance = params.get('initial_state_covariance', np.ones((2, 2))),
-        #     observation_covariance = params.get('observation_covariance', 0.5),
-        #     transition_covariance = params.get('transition_covariance', trans_cov),
-        # )
-        # kf = run_Kalman_filter
 
         output = {
             'kf': kf,
@@ -290,16 +277,11 @@ class SignalGeneration:
         ax[2].grid()
         plt.show()
 
-
-
         _ = show_df[['px_ts1', 'est_px_ts1']].plot(grid=True)
         plt.show()
-
 
         _ = (show_df['demeaned_spread'] / show_df['px_ts1'] * 100).plot(
                 title='% error of estimation of px_ts1 (spread / px_ts1 * 100)' )
         plt.show()
 
         
-        
-
